@@ -1,0 +1,9 @@
+A,B=map(int,input().split())
+cnt=0
+while(A!=1):
+    if(A%B==0):
+        A//=B
+    elif(A%B!=0):
+        A-=1
+    cnt+=1
+print(cnt)
