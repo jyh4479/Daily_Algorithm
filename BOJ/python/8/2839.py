@@ -1,0 +1,16 @@
+A=int(input())
+cnt=0
+while(A>0):
+    if(A%5==0):
+        A-=5
+        cnt+=1
+    elif(A%3==0):
+        A-=3
+        cnt+=1
+    elif(A>5):
+        A-=5
+        cnt+=1
+    else:
+        cnt=-1
+        break
+print(cnt)
