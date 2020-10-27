@@ -2,7 +2,7 @@ N,M=map(int,input().split())
 cur_y,cur_x,cur_dir=map(int,input().split())
 arr=[[int(line) for line in input().split()] for i in range(N)]#이 부분 복습
 
-dir_y=[0,1,0,-1]
+dir_y=[0,-1,0,1]
 dir_x=[-1,0,1,0]
 
 arr[cur_y][cur_x]=-1 #현위치 방문 체크
@@ -60,3 +60,14 @@ while(1):
         cnt+=1
         arr[cur_y][cur_x]=-1 #방문 체크
         cur_dir=left(cur_dir)
+"""
+7 7
+3 3 1
+1 1 1 1 1 1 1
+1 0 1 0 1 0 1
+1 0 0 0 1 0 1
+1 0 1 0 0 0 1
+1 0 1 1 1 0 1
+1 0 0 1 0 0 1
+1 1 1 1 1 1 1
+"""
