@@ -1,0 +1,1 @@
+stack사용에 대한 추가 설명 (참고: https://ooeunz.tistory.com/7)
