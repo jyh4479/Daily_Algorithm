@@ -21,7 +21,6 @@ print(start_idx,end=" ")
 while(len(stack)):
     v=stack[-1]
 
-    flag=0
     for i in graph[v]:#방문하지 않은 인접 정점 탐색
         if(visited[i]==False):#방문하지 않은경우
             stack.append(i)
@@ -29,9 +28,6 @@ while(len(stack)):
             print(i,end=" ")
             flag=1
             break
-        elif(visited[i]==True):
-            continue
-    if(flag==0):
-        stack.pop()
-        #주위를 모두 방문했으면 stack삭제
+        if(i==graph[v][-1]):#인접 정점을 모두 방문한 경우
+            stack.pop()
 print()
