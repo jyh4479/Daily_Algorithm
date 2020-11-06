@@ -6,3 +6,5 @@
 9020 처음에 list를 만들어서 판별하여 찾아 시간초과 발생 (참고: https://aorica.tistory.com/134)
 
 3053 수학적 개념을 짚고 넘어가야함 (참고: https://sihyungyou.github.io/baekjoon-3053/)
+
+1002 내접하는 경우를 생각하지 못해서 오래걸림 추가로 점의 거리를 구할때 제곱근을 구하지 않아 floating point오차를 방지함
