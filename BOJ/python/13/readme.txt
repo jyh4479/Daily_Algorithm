@@ -1,0 +1,1 @@
+15649 기존 순열을 구하는 코드에서 응용해야함 (참고: https://jdselectron.tistory.com/22)
