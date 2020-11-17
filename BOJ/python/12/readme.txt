@@ -5,3 +5,5 @@
 1181 set자료형 처음 사용해본 문제 + set자료형을 list로 변경하는 것도 다루어봄
 
 10814 string상태의 숫자비교와 int상태의 숫자비교에 대한 차이점
+
+#https://dailyheumsi.tistory.com/67 --> lambda 참고
