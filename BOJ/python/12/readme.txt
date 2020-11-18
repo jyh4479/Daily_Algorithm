@@ -6,5 +6,7 @@
 
 10814 string상태의 숫자비교와 int상태의 숫자비교에 대한 차이점
 
+2108 기존 input이 아닌 sys import후 입력을 바꾸어 성공
+
 #https://dailyheumsi.tistory.com/67 --> lambda 참고
 #https://hongsamm.tistory.com/16 --> 자료형 참고
