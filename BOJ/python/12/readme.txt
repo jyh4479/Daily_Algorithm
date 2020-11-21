@@ -8,5 +8,7 @@
 
 2108 기존 input이 아닌 sys import후 입력을 바꾸어 성공
 
+2751 내장함수들은 보통 병합정렬이나 퀵정렬로 이루어져있어 속도가 빠르다
+
 #https://dailyheumsi.tistory.com/67 --> lambda 참고
 #https://hongsamm.tistory.com/16 --> 자료형 참고
