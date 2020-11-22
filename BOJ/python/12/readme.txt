@@ -10,5 +10,7 @@
 
 2751 내장함수들은 보통 병합정렬이나 퀵정렬로 이루어져있어 속도가 빠르다
 
+10989 메모리를 최소화 할 수 있는 방법 익히기 --> 이것이 코딩테스트다 에서 계수정렬 참고하면 됌
+
 #https://dailyheumsi.tistory.com/67 --> lambda 참고
 #https://hongsamm.tistory.com/16 --> 자료형 참고
