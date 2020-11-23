@@ -4,7 +4,7 @@ range_list=list()
 for _ in range(N):
     range_list.append(list(map(int,sys.stdin.readline().split())))
 
-range_list.sort(key=lambda x:(x[1],x[0]))
+range_list.sort(key=lambda x:(x[1],x[0])) #ex([8,8],[7,8] and [7,8],[8,8])인 경우 카운트 되는 수가 달라서 정렬조건을 두개 넣어주어야한다
 #print(range_list)
 
 cnt=0
