@@ -1,6 +1,4 @@
 problem=input()
-
-
 number_list=list()
 sum_list=list()
 number=""
