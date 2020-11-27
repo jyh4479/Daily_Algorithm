@@ -24,15 +24,12 @@ while q:
             graph[ny][nx]=graph[v[0]][v[1]]+1
             q.append([ny,nx])
 
-ans=-1
-breaker=0
-for i in range(N):
-    for j in range(M):
-        if graph[i][j] == 0:
-            ans,breaker=0,1
-            break
-        ans=max(ans,graph[i][j])
-    if breaker==1:
+ans=0
+for x in graph:
+    if 0 in x:
+        ans=0
         break
+    else:
+        ans=max(ans,max(x))
 
 print(ans-1)
