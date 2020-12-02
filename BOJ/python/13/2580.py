@@ -1,3 +1,50 @@
+import sys #pypy3에서 동작
+graph=[list(map(int,sys.stdin.readline().split())) for _ in range(9)]
+stack=[]
+
+for i in range(9): #0 위치 저장
+    for j in range(9):
+        if graph[i][j]==0:
+            stack.append([i,j])
+
+def print_graph():
+    for i in range(9):
+        for j in graph[i]:
+            print(j,end=" ")
+        print()
+
+def check(num_list,i,j):
+    a=i//3
+    b=j//3
+    for y in range(a*3,a*3+3): #3*3검색
+        for x in range(b*3,b*3+3):
+            if graph[y][x] in num_list:
+                num_list.remove(graph[y][x])
+    for y in range(9): #세로
+        if graph[y][j] in num_list:
+            num_list.remove(graph[y][j])
+    
+    for x in range(9): #가로
+        if graph[i][x] in num_list:
+            num_list.remove(graph[i][x])
+    return num_list
+
+def dfs(cnt):
+    if cnt==len(stack):
+        print_graph()
+        exit()
+        return
+    else:
+        num_list=[i for i in range(1,10)]
+        ny=stack[cnt][0]
+        nx=stack[cnt][1]
+        available_list=check(num_list,ny,nx)
+        for i in available_list:
+            graph[ny][nx]=i
+            dfs(cnt+1)
+            graph[ny][nx]=0
+dfs(0)
+
 """시간초과 (해당 코드는 백트래킹이라기보단 DFS로 비효율적 완전탐색을 해버림 답은 맞음)
 #maps=[list(map(int,input().split())) for _ in range(9)]-->초기화법
 
