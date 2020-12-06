@@ -7,6 +7,23 @@ def solution(numbers, target):
             else: return answer
 
         else:
+            answer=dfs(cnt+1,ans+numbers[cnt],answer)
+            answer=dfs(cnt+1,ans-numbers[cnt],answer)
+            return answer
+
+    answer=dfs(0,0,answer)
+    return answer
+
+"""
+def solution(numbers, target):
+    answer=0
+
+    def dfs(cnt,ans,answer):
+        if cnt==len(numbers):
+            if ans==target: return answer+1
+            else: return answer
+
+        else:
             for i in range(2):
                 if i==0:
                     answer=dfs(cnt+1,ans+numbers[cnt],answer)
@@ -17,6 +34,7 @@ def solution(numbers, target):
     answer=dfs(0,0,answer)
     return answer
 print(solution([1,1,1,1,1],3))
+"""
 
 """
 def solution(numbers, target):
