@@ -39,3 +39,29 @@ def solution(check_list):
 print(solution(["XOXO","OXXO","XXOX","XOOO"]))
 print(solution(["OXXO","XOXO","XXOO"]))
 print(solution(["OXOXO","OOOOO","XOXOX"]))
+
+"""
+#이것도 좀 복잡함 --> 함수로 나눠서 깔끔하게 다시 풀어보기
+from itertools import combinations
+
+def solution(check_list):
+    visit=[i for i in range(len(check_list))]
+    answer=0
+    for i in range(1,len(check_list)+1):#선택 개수
+        visit_list=list(combinations(visit,i))
+        for j in visit_list:
+            ans_list=["X" for _ in range(len(check_list[0]))]
+            for k in j:
+                for a in range(len(check_list[k])):
+                    if ans_list[a] == "X" and check_list[k][a] == "O":
+                        ans_list[a]="O"
+            if "X" not in ans_list:
+                answer=i
+                break
+        if answer!=0:
+            break
+    return answer
+print(solution(["XOXO","OXXO","XXOX","XOOO"]))
+print(solution(["OXXO","XOXO","XXOO"]))
+print(solution(["OXOXO","OOOOO","XOXOX"]))
+"""
