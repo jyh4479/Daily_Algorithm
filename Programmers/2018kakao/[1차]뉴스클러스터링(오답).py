@@ -1,21 +1,20 @@
 def sum_set(A,B):
     A_list,B_list=list(A),list(B)
+
     for i in A_list:
         if i in B_list:
             B_list.remove(i)
-    print(A_list+B_list)
+    #print(A_list+B_list)
     return len(A_list+B_list)
 
 def inter_set(A,B):
     inter_list=[]
 
-    if len(A)>len(B):
-        A,B=B,A
-
     for i in A:
         if i in B:
             inter_list.append(i)
-    print(inter_list)
+            B.remove(i)
+    #print(inter_list)
     return len(inter_list)
 
 def multi_set(string):
@@ -37,3 +36,5 @@ def solution(str1, str2):
         ans=D/C
 
     return int(ans*65536)
+
+#교집합을 구하는 함수에서 실수있었음
