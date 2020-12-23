@@ -51,11 +51,13 @@ def solution(n, t, m, timetable):
         return bus_time[n-1]
     #######################################################
     elif n>1 and len(q)>=m: #버스가 여러대 수용인원이 넘칠경우
-        for i in range(len(bus_time)-1): #버스 시간 --> 마지막 버스까지만 진행
-           for j in range(m): #태울 인원 확인
-               if q[j]<=bus_time[i]:
+        for i in range(len(bus_time)-1): #버스 시간 --> 마지막 전 버스까지만 진행
+           num=m
+           for j in list(q): #태울 인원 확인
+               if num==0:break
+               if j<=bus_time[i]:      
+                   num+=-1
                    q.popleft() #탑승
-
         ########### 여기서 다시 버스한대
         if len(q)>=m:#기다리는 사람이 있는경우
             a,b=q[m-1].split(":")
@@ -63,3 +65,5 @@ def solution(n, t, m, timetable):
         else:
             return bus_time[n-1]
     #######################################################
+
+#탑승하는 시점에서 18케이스가 빈큐일때 런타임 에러가나서 실패했음
