@@ -1,3 +1,11 @@
+def solution(n, arr1, arr2): #bin함수 rjust함수를 이용한 파이썬다운 코드
+    ans=[]
+    for i in range(n):
+        a=str(bin(arr1[i]|arr2[i])[2:]).replace("1","#").rjust(n,"0")
+        ans.append(a.replace("0"," "))
+    return ans
+
+"""먼저 작성한 코드
 def change(n,num):
     ans=""
     for i in range(n):
@@ -24,3 +32,4 @@ def solution(n, arr1, arr2):
                 text+=" "
         ans.append(text)
     return ans
+"""
