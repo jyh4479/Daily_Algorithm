@@ -6,7 +6,7 @@ def change(n,num):
         else:
             ans+="0"
         num>>=1
-    return ans[::-1]
+    return ans[::-1] #거꾸로 출력하는 방법
 
 def solution(n, arr1, arr2):
     A,B=[],[]
