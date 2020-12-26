@@ -10,4 +10,8 @@ for coin in coin_list:
     for i in range(coin,M+1):
         if ans_list[i-coin]!=10001:
             ans_list[i]=min(ans_list[i],ans_list[i-coin]+1)
-print(ans_list)
+
+if ans_list[-1]==10001:
+    print(-1)
+else:
+    print(ans_list[-1])
