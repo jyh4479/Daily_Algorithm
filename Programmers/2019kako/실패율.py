@@ -15,16 +15,6 @@ def solution(N, stages): #런타임 에러 발생
     
     ans=[]
     while index_list:
-        max_value=-1
-        max_index=-1
-        cur_index=-1
-        for i in range(len(index_list)):
-            item=index_list[i][1]
-            index=index_list[i][0]
-            if item>max_value:
-                max_value=item
-                max_index=index
-                cur_index=i
-        ans.append(max_index)
-        index_list.pop(cur_index)
+        ans.append(max(index_list,key=lambda x:x[1])[0])
+        index_list.remove(max(index_list,key=lambda x:x[1]))
     return ans
