@@ -1,4 +1,4 @@
-def solution(N, stages): #런타임 에러 발생
+def solution(N, stages):
     ans=[]
     for stage in range(1,N+1):
         a,b=0,0
@@ -7,7 +7,10 @@ def solution(N, stages): #런타임 에러 발생
                 b+=1
             if i==stage: #도전했다가 실패한 사람들
                 a+=1
-        ans.append(float(a/b))
+        if b==0: #0에 대한 예외
+            ans.append(0)
+        else:
+            ans.append(float(a/b))
 
     index_list=[]
     for i in range(len(ans)):
