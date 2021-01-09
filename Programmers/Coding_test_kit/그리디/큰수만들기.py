@@ -1,3 +1,21 @@
+def solution(number, k): #풀이 참고
+    stack=[]
+    ans=""
+    for i,num in enumerate(number):
+        while stack and stack[-1]<num and k>0:
+            stack.pop()
+            k-=1
+            if k==0:
+                ans+=number[i:]
+                break
+        stack.append(num)
+    if k>0:
+        ans="".join(stack[:k+1])
+    else:
+        ans="".join(stack)
+    return ans
+
+"""시간 초과 코드
 def solution(number, k):
     num=len(number)-k #return되는 문자열 길이
 
@@ -16,3 +34,4 @@ def solution(number, k):
         start_point=index+1
         end_point+=1
     return ans
+"""
