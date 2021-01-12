@@ -1,3 +1,19 @@
+def solution(people, limit): #정렬 후 앞 뒤로 더하면서 체크
+    i,j,ans=0,len(people)-1,0
+    people.sort(reverse=True)
+    while i<=j:
+        if people[i]+people[j]>limit:
+            i+=1
+            ans+=1
+            continue
+        else:
+            i+=1
+            j-=1
+            ans+=1
+            continue
+    return ans
+
+"""
 def solution(people, limit): #효율성통과못함
     ans=0
     while people:
@@ -15,3 +31,4 @@ def solution(people, limit): #효율성통과못함
             ans+=1
             continue
     return ans
+"""
