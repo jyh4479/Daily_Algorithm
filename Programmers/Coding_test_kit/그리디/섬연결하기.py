@@ -3,7 +3,7 @@ def solution(n, costs):
     ans = 0
     costs.sort(key = lambda x: x[2]) # cost 기준으로 오름차순 정렬
     routes = set([costs[0][0]]) # 집합
-    while len(routes)!=n:
+    while len(routes)!=n: #사이클에 대한 개념 --> 크루스칼 다시 학습하면서 다지기
         for cost in costs:
             if cost[0] in routes and cost[1] in routes:
                 continue
