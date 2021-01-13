@@ -1,1 +1,1 @@
-가장큰수 - lambda함수 학습하기
+가장큰수 - lambda함수 & functools함수 공부해보기
