@@ -11,3 +11,4 @@ def solution(brown, yellow):
         a,b = i[0],i[1]
         if a*b == total_block and a>=b:
             return i
+        
