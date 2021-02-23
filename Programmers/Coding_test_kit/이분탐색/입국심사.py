@@ -3,7 +3,7 @@ def solution(n, times):
 
     leng = len(times)
     left = 1
-    right = (leng+1) * max(times) # 최대 범위
+    right = n * max(times) # 최대 범위
 
     while left <= right:
         mid = (left + right) // 2
