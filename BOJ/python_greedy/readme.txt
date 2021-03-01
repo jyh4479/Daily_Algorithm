@@ -20,4 +20,4 @@ point -> greedy알고리즘 특성상 최대값과 최소값을 연속으로 선
 
 3109 - greedy + BFS 접근은 성공 --> BFS나 DFS로 탐색 and 최대한 많은 파이프를 연결하기위해서는 우상향하여 탐색(greedy)
 
-10775 - union find로 풀어주어야함
+10775 - union find로 풀어주어야함 (https://mygumi.tistory.com/245) 무조건 참고해서 익히기
