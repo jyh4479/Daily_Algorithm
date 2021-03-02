@@ -23,3 +23,5 @@ point -> greedy알고리즘 특성상 최대값과 최소값을 연속으로 선
 10775 - union find로 풀어주어야함 (https://mygumi.tistory.com/245) 무조건 참고해서 익히기
 
 2810 - 왜 한번에 맞았지..?
+
+2720 - 전형적인 greedy문제
