@@ -1,6 +1,6 @@
 import copy
 import sys
-sys.setrecursionlimit(10000);
+sys.setrecursionlimit(100000);
 
 N=int(input())
 graph=[]
@@ -24,7 +24,7 @@ for i in range(N):
     graph.append(list(map(int,input().split())))
     maxValue=max(maxValue, max(graph[i]))
 
-for rain in range(1,maxValue+1): #각각 비 오는 양을 체크
+for rain in range(maxValue+1): #각각 비 오는 양을 체크 --> 비가 오지 않은경우 0도 포함시켜야함
     copyGraph=copy.deepcopy(graph) #높이 정보 복사
 
     for y in range(N):
