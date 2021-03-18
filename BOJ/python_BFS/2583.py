@@ -1,10 +1,14 @@
+import sys
+sys.setrecursionlimit(10000)
+
 N,M,K=map(int,input().split())
 graph=[[0 for _ in range(M)] for _ in range(N)]
-size=0
+size=1
 
 def dfs(y,x):
     dictx=[0,0,1,-1]
     dicty=[1,-1,0,0]
+    global size
     
     for i in range(4):
         dy=y+dicty[i]
@@ -13,11 +17,8 @@ def dfs(y,x):
             continue
         else:
             graph[dy][dx]=graph[y][x]+1
+            size+=1
             dfs(dy,dx)
-
-    global size
-    size=max(size,graph[y][x])
-
 
 for _ in range(K):
     x1,y1,x2,y2=map(int,input().split())
@@ -27,6 +28,9 @@ for _ in range(K):
     for i in range(starty,endy+1):
         for j in range(startx,endx+1):
             graph[i][j]=-1
+    #for i in range(y1,y2):
+    #    for j in range(x1,x2):
+    #        graph[i][j]='x'
 
 ans=0
 sizeList=[]
@@ -37,7 +41,7 @@ for i in range(N):
             ans+=1
             dfs(i,j)
             sizeList.append(size)
-        size=0
+        size=1
 
 print(ans)
 for i in range(len(sizeList)):
