@@ -18,6 +18,10 @@ for _ in range(N):
 #BFS logic
 q=deque()
 q.append([startx,0]) #시작 부분과 거리 정의
+visit[startx]=True
+ans=-1
+while(q):
+    v=q.popleft()
     point,dist=v[0],v[1] #현재 위치와 거리
 
     if point==starty: #정답을 도출할 정점에 닿았을경우
