@@ -34,7 +34,7 @@ def melt(y,x):
         if dy<0 or dx<0 or dy>=N or dx>=M:
             continue
 
-        if visit[dy][dx]==True: #주위에 빙하가 있는경우
+        if visit[dy][dx]==False: #주위에 빙하가 있는경우
             num+=1
 
     return num
