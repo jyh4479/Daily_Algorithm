@@ -1,0 +1,17 @@
+def solution(matter):
+    letter=list(matter)
+    letter.sort()
+    
+    num = 0
+    numbers = list()
+    alphabet = list()
+    for index, item in enumerate(letter):
+        if not 48 <= ord(item) <= 57:
+            numbers=letter[:index]
+            alphabet=letter[index:]
+            break
+
+    return "".join(alphabet)+str(sum(list(map(int,numbers))))
+
+print(solution("K1KA5CB7"))
+print(solution("AJKDLSI412K4JSJ9D"))
