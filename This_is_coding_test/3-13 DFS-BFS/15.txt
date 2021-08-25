@@ -1,0 +1,21 @@
+ans = list()
+
+def solution(N,M,K,X):
+    graph=[[] for _ in range(N+1)]
+    for _ in range(M):
+        x,y=map(int,input().split())
+        graph[x].append(y)
+
+    def dfs(start, count):
+        if count == K : 
+            ans.append(start)
+            return
+
+        for i in graph[start]:
+            dfs(i,count+1)
+    dfs(X,0)
+
+
+solution(4,4,2,1)
+for data in ans:
+    print(data)
