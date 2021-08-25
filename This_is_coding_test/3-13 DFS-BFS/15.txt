@@ -2,6 +2,8 @@ ans = list()
 
 def solution(N,M,K,X):
     graph=[[] for _ in range(N+1)]
+    visit=[False for _ in range(N+1)]
+
     for _ in range(M):
         x,y=map(int,input().split())
         graph[x].append(y)
@@ -12,7 +14,12 @@ def solution(N,M,K,X):
             return
 
         for i in graph[start]:
-            dfs(i,count+1)
+            if visit[i]==False:
+                visit[i]=True
+                dfs(i,count+1)
+                visit[i]=False
+
+    visit[X]=True
     dfs(X,0)
 
 
