@@ -1,28 +1,29 @@
+from collections import deque
+
+M, N, K, X = map(int, input().split())
+graph = [[] for _ in range(M + 1)]
 ans = list()
+for _ in range(N):
+    x, y = map(int, input().split())
+    graph[x].append(y)
 
-def solution(N,M,K,X):
-    graph=[[] for _ in range(N+1)]
-    visit=[False for _ in range(N+1)]
+visit = [False for _ in range(M + 1)]
+start, visit[X] = X, True
+q = deque()
+q.append([start, 0])
 
-    for _ in range(M):
-        x,y=map(int,input().split())
-        graph[x].append(y)
+while q:
+    v = q.popleft()
+    check, dist = v[0], v[1]
+    for i in graph[check]:
+        if not visit[i]:
+            visit[i] = True
+            q.append([i, dist + 1])
+            if dist + 1 == K:
+                ans.append(i)
 
-    def dfs(start, count):
-        if count == K : 
-            ans.append(start)
-            return
-
-        for i in graph[start]:
-            if visit[i]==False:
-                visit[i]=True
-                dfs(i,count+1)
-                visit[i]=False
-
-    visit[X]=True
-    dfs(X,0)
-
-
-solution(4,4,2,1)
-for data in ans:
-    print(data)
+if not ans:
+    print(-1)
+else:
+    for data in ans:
+        print(data)
