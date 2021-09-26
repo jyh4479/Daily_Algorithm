@@ -13,7 +13,7 @@ def solution(progresses, speeds):
     
     ans=[]
     check=-1
-    count=1
+    count=0
     while numList:
         top=numList.popleft()
         
@@ -27,7 +27,10 @@ def solution(progresses, speeds):
         else:
             ans.append(count)
             numList.appendleft(top)
-            count=1
+            count=0
             check=-1
-    ans.append(count)
-    return ans
+    if count==0:
+        return ans
+    else:
+        ans.append(count)
+        return ans
