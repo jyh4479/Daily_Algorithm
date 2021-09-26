@@ -10,18 +10,24 @@ def solution(progresses, speeds):
             count+=1
         numList.append(count)
     
+    
     ans=[]
-    check=sys.maxsize
+    check=-1
     count=1
     while numList:
-        value=numList.popleft()
-        if check>=value:
+        top=numList.popleft()
+        
+        if check==-1:
+            check=top
+            count=1
+            continue
+            
+        if check>=top:
             count+=1
         else:
             ans.append(count)
+            numList.appendleft(top)
             count=1
-            check=sys.maxsize
-    
+            check=-1
+    ans.append(count)
     return ans
-
-#현재 오답
