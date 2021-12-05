@@ -25,7 +25,7 @@ public class Main {
 			if (visited[i]) sum += dataList.get(i);
 		}
 
-		if (sum <= 100) printAns(visited, dataList);
+		if (sum == 100) printAns(visited, dataList);
 	}
 
 
