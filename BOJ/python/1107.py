@@ -34,4 +34,7 @@ if __name__ == '__main__':
     for i in range(channelSize):
         selectNumber(numberList, '', i + 1, 0)
 
-    print(ans)
+    if ans == sys.maxsize:
+        print(abs(100 - channel))
+    else:
+        print(ans)
