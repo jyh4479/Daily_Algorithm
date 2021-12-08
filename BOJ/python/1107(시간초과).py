@@ -31,7 +31,7 @@ if __name__ == '__main__':
     channelSize = len(channel)
     channel = int(channel)
 
-    for i in range(channelSize):
+    for i in range(channelSize + 1):
         selectNumber(numberList, '', i + 1, 0)
 
     if ans == sys.maxsize:
