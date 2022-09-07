@@ -1,5 +1,5 @@
 function solution(n, words) {
-    let answer = [];
+    let answer = [0, 0];
     const usedWord = [];
     let loop = 1;
     let prevWord = "";
@@ -18,7 +18,8 @@ function solution(n, words) {
         } else {
             //전에 사용한 단어인지 체크, 끝말을 잘 이어갔는지
             if (usedWord.includes(word) || prevWord[prevWord.length - 1] !== word[0]) {
-                answer = [loop, index + 1];
+                console.log(word)
+                answer = [(index % n) + 1, loop];
                 break;
             } else {
                 usedWord.push(word);
@@ -26,7 +27,5 @@ function solution(n, words) {
             }
         }
     }
-
-
     return answer;
 }
