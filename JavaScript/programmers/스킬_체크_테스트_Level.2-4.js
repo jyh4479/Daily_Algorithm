@@ -37,3 +37,27 @@ function solution(s) {
 
     return q.length <= 0;
 }
+
+// 최근 풀이 --> 
+// function solution(s) {
+//     const checkArray = [];
+
+//     for (let i = 0; i < s.length; i++) {
+//         const mark = s[i];
+//         if (checkArray.length === 0) {
+//             checkArray.push(mark);
+//         } else {
+//             if (mark === ')') {
+//                 if (checkArray[checkArray.length - 1] === '(') {
+//                     checkArray.pop();
+//                 } else {
+//                     checkArray.push(mark);
+//                 }
+//             } else if (mark === '(') {
+//                 checkArray.push(mark);
+//             }
+//         }
+//     }
+
+//     return checkArray.length === 0;
+// }
