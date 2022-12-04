@@ -2,26 +2,60 @@
  * @param {number[]} nums
  * @return {number}
  */
-//Test case 60 / 78
-//Time Limit Exceeded
-var minimumAverageDifference = function(nums) {
-    let ans=0;
+
+// var minimumAverageDifference = function(nums) {
+//     let ans=0;
+//     let minValue = Number.MAX_VALUE;
+
+//     for(let i=0;i<nums.length;i++){
+//         const leftArray = nums.slice(0,i+1);
+//         const rightArray = nums.slice(i+1);
+
+//         const leftSum = Math.floor(leftArray.reduce((a,b)=>a+b,0)/leftArray.length);
+//         const rightSum = rightArray.length !== 0 ? Math.floor(rightArray.reduce((a,b)=>a+b,0)/rightArray.length) : 0 ;
+
+//         const curValue = Math.abs(leftSum-rightSum);
+//         if(curValue < minValue){
+//             minValue = curValue;
+//             ans=i;
+//         }
+
+//     }
+//     return ans;
+// };
+
+var minimumAverageDifference = function (nums) {
+    //memoization으로 reduce 연산 속도 줄이기
+    let ans = 0;
     let minValue = Number.MAX_VALUE;
 
-    for(let i=0;i<nums.length;i++){
-        const leftArray = nums.slice(0,i+1);
-        const rightArray = nums.slice(i+1);
+    let leftLength = 0;
+    let leftSum = 0;
+    let rightLength = nums.length;
+    let rightSum = nums.reduce((a, b) => a + b, 0);
 
-        const leftSum = Math.floor(leftArray.reduce((a,b)=>a+b,0)/leftArray.length);
-        const rightSum = rightArray.length !== 0 ? Math.floor(rightArray.reduce((a,b)=>a+b,0)/rightArray.length) : 0 ;
+    const check = [];
 
-        const curValue = Math.abs(leftSum-rightSum);
-        if(curValue < minValue){
-            minValue = curValue;
-            ans=i;
+    for (let i = 0; i < nums.length; i++) {
+        leftLength++;
+        rightLength--;
+
+        rightLength = rightLength === 0 ? 1 : rightLength;
+
+        leftSum += nums[i];
+        rightSum -= nums[i];
+
+        const avgLeft = Math.floor(leftSum / leftLength);
+        const avgRight = Math.floor(rightSum / rightLength);
+
+        const curResult = Math.abs(avgLeft - avgRight);
+
+        if (minValue > curResult) {
+            ans = i;
+            minValue = curResult;
         }
-
     }
+
     return ans;
 };
 
