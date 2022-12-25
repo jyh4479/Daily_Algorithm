@@ -69,3 +69,7 @@ var answerQueries = function (nums, queries) {
 
     return ans;
 };
+
+//solution
+//1. sort 후 count 풀이
+//2. 누적합을 통한 풀이
