@@ -67,3 +67,26 @@ var mergeKLists = function (lists) {
 
     return sortedList.getNodeList();
 };
+
+// 첫 풀이에 heap 문제가 있었는데 그에 대한 해결법과 코드
+// const mergeKLists = (lists) => {
+//     let arr = [];
+
+//     //flatten
+//     function addNode(node){
+//         if(node != null){
+//             arr.push(node);
+//             addNode(node.next);
+//             node.next = null;//prevent leetcode Javascript heap out of memory
+//         }
+//     }
+//     lists.forEach(addNode);
+
+//     //sort
+//     if(arr.length > 1){
+//         arr.sort((a,b) => a.val - b.val);
+//         arr.reduce((a, b) => a.next = b);
+//     }
+
+//     return arr.length != 0 ? arr[0] : null;
+// };
