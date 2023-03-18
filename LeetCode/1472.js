@@ -2,8 +2,9 @@
  * @param {string} homepage
  */
 var BrowserHistory = function(homepage) {
-    this.stack = [homepage]
-    this.index = 0
+  this.history = [homepage];
+  this.forwardHistory = [];
+  return null;
 };
 
 /** 
@@ -11,9 +12,9 @@ var BrowserHistory = function(homepage) {
  * @return {void}
  */
 BrowserHistory.prototype.visit = function(url) {
-    this.stack = this.stack.slice(0,this.index+1)
-    this.stack.push(url)
-    this.index++
+  this.history.push(url);
+  this.forwardHistory = [];
+  return null;
 };
 
 /** 
@@ -21,12 +22,11 @@ BrowserHistory.prototype.visit = function(url) {
  * @return {string}
  */
 BrowserHistory.prototype.back = function(steps) {
-    if(steps > this.index){
-        this.index=0
-        return this.stack[this.index]
-    }
-    this.index -= steps
-    return this.stack[this.index]
+  while(steps>0 && this.history.length > 1){
+    steps-=1;
+    this.forwardHistory.push(this.history.pop());
+  }
+  return this.history[this.history.length-1];
 };
 
 /** 
@@ -34,12 +34,13 @@ BrowserHistory.prototype.back = function(steps) {
  * @return {string}
  */
 BrowserHistory.prototype.forward = function(steps) {
-    if(steps > this.stack.length-1-this.index){
-        this.index = this.stack.length-1
-        return this.stack[this.stack.length-1]
-    }
-    this.index += steps
-    return this.stack[this.index]
+  while(steps>0){
+    steps-=1;
+    const forward = this.forwardHistory.pop();
+    if(forward===undefined) break;
+    this.history.push(forward);
+  }
+  return this.history[this.history.length-1];
 };
 
 /** 
